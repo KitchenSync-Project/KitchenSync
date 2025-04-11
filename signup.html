@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block title %}Sign Up{% endblock %}
+{% block page %}Sign Up{% endblock %}
+
+{% block link%}
+    <ul id="nav-mobile" class="right">
+        <li><a href="/login">Login</a></li>
+    </ul>
+{% endblock %}
+
+{% block styles %}
+  body {
+    background-image: url("https://i.pinimg.com/736x/19/68/b0/1968b06afc1ef281a748c9b307e39f06.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  #signup-container {
+    background-color: #53735b;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+  }
+
+  #signupForm {
+    padding: 1em;
+  }
+
+  .input-field input[type=text]:focus + label,
+  .input-field input[type=password]:focus + label {
+    color: white !important;
+  }
+
+  .input-field input[type=text]:focus,
+  .input-field input[type=password]:focus {
+    border-bottom: 1px solid white !important;
+    box-shadow: 0 1px 0 0 white !important;
+  }
+
+  .input-field input[type=text],
+  .input-field input[type=password] {
+      color: white !important;
+  }
+
+  .center-button {
+    text-align: center;
+  }
+
+  .center-button input[type=submit] {
+    margin: 0 auto; /* Center the button horizontally */
+    display: block; /* Make the button a block-level element */
+  }
+
+  .login-link {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .login-link a {
+    color: white; /* Link color */
+  }
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div style="text-align: center; margin-bottom: 20px;">
+    <!-- Image logo will be added here -->
+  </div>
+  <div id="signup-container" class="row">
+    <form class="col s12" id="signupForm" method="POST" action="/signup">
+      <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Enter Username" name="username" type="text" class="validate">
+          <label for="username">Username</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="card-action row center-button">
+        <input type="submit" class="blue text-white btn">
+      </div>
+    </form>
+    <div class="login-link">
+      <a href="/login">Already have an account? Login</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
